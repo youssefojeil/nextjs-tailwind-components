@@ -1,3 +1,5 @@
+import CallToAction from '@/components/cta/call-to-action';
+import CallToActionWithBackgroundImage from '@/components/cta/call-to-action-background-img';
 import Header from '@/components/header/header';
 import Modal from '@/components/modal/modal';
 import { ModalProvider } from '@/components/modal/modal-provider';
@@ -16,6 +18,10 @@ export default function Home() {
         links={links}
         stats={stats}
       />
+
+      <CallToAction />
+
+      <CallToActionWithBackgroundImage />
 
       <div>
         <ModalProvider />

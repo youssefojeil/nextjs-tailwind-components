@@ -1,6 +1,7 @@
 import { Dialog, Disclosure } from '@headlessui/react';
 import { XMarkIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 import { callsToAction, products } from '@/constants/nav-items';
+import MobileNavLink from './mobile-nav-link';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -59,32 +60,13 @@ const MobileMenu = ({ isOpen, onClose }) => (
                 </>
               )}
             </Disclosure>
-            <a
-              href="#"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              Features
-            </a>
-            <a
-              href="#"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              Marketplace
-            </a>
-            <a
-              href="#"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              Company
-            </a>
+
+            <MobileNavLink href="#">Features</MobileNavLink>
+            <MobileNavLink href="#">Marketplace</MobileNavLink>
+            <MobileNavLink href="#">Company</MobileNavLink>
           </div>
           <div className="py-6">
-            <a
-              href="#"
-              className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              Log in
-            </a>
+            <MobileNavLink>Log in</MobileNavLink>
           </div>
         </div>
       </div>

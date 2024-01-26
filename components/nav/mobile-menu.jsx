@@ -6,7 +6,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const MobileMenu = ({ isOpen, onClose, setMobileMenuOpen }) => (
+const MobileMenu = ({ isOpen, onClose }) => (
   <Dialog as="div" className="lg:hidden" open={isOpen} onClose={onClose}>
     <div className="fixed inset-0 z-10" />
     <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
@@ -22,7 +22,7 @@ const MobileMenu = ({ isOpen, onClose, setMobileMenuOpen }) => (
         <button
           type="button"
           className="-m-2.5 rounded-md p-2.5 text-gray-700"
-          onClick={() => setMobileMenuOpen(false)}
+          onClick={onClose}
         >
           <span className="sr-only">Close menu</span>
           <XMarkIcon className="h-6 w-6" aria-hidden="true" />

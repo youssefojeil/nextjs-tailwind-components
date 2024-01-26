@@ -5,10 +5,10 @@ import { products, callsToAction } from '@/constants/nav-items';
 
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
-const ProductPopover = () => (
+const PopoverNavItem = ({ navItem, subItems, ctas }) => (
   <Popover className="relative">
-    <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-      Product
+    <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 focus:outline-none">
+      {navItem}
       <ChevronDownIcon
         className="h-5 w-5 flex-none text-gray-400"
         aria-hidden="true"
@@ -26,7 +26,7 @@ const ProductPopover = () => (
     >
       <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
         <div className="p-4">
-          {products.map((item) => (
+          {subItems.map((item) => (
             <div
               key={item.name}
               className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -51,7 +51,7 @@ const ProductPopover = () => (
           ))}
         </div>
         <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-          {callsToAction.map((item) => (
+          {ctas.map((item) => (
             <a
               key={item.name}
               href={item.href}
@@ -70,4 +70,4 @@ const ProductPopover = () => (
   </Popover>
 );
 
-export default ProductPopover;
+export default PopoverNavItem;

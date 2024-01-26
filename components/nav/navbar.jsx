@@ -27,7 +27,6 @@ const Navbar = () => {
         </div>
       </nav>
       <MobileMenu
-        setMobileMenuOpen={setMobileMenuOpen}
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
       />

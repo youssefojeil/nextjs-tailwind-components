@@ -26,9 +26,9 @@ const CallToAction = () => {
           </svg>
           <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Book an appointment with
+              Embrace the Art of Self-Care
               <br />
-              One of our experts
+              Book Your Transformation Session Now!
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
               Some text based off the different services or maybe just call to

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Logo from './logo';
-import DesktopMenu from './desktop-menu';
-import MenuLink from './menu-link';
-import MobileMenu from './mobile-menu';
-import MobileMenuButton from './mobile-menu-button';
+import { useState } from "react";
+import Logo from "./logo";
+import DesktopMenu from "./desktop-menu";
+import MenuLink from "./menu-link";
+import MobileMenu from "./mobile-menu";
+import MobileMenuButton from "./mobile-menu-button";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ const Navbar = () => {
         </div>
         <DesktopMenu />
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <MenuLink href="#">Log in &rarr;</MenuLink>
+          <MenuLink href="/login">Log in &rarr;</MenuLink>
         </div>
       </nav>
       <MobileMenu

@@ -1,10 +1,10 @@
-import { Dialog, Disclosure } from '@headlessui/react';
-import { XMarkIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
-import { callsToAction, products } from '@/constants/nav-items';
-import MobileNavLink from './mobile-nav-link';
+import { Dialog, Disclosure } from "@headlessui/react";
+import { XMarkIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
+import { callsToAction, products } from "@/constants/nav-items";
+import MobileNavLink from "./mobile-nav-link";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 const MobileMenu = ({ isOpen, onClose }) => (
@@ -39,8 +39,8 @@ const MobileMenu = ({ isOpen, onClose }) => (
                     Product
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'rotate-180' : '',
-                        'h-5 w-5 flex-none'
+                        open ? "rotate-180" : "",
+                        "h-5 w-5 flex-none"
                       )}
                       aria-hidden="true"
                     />
@@ -66,7 +66,7 @@ const MobileMenu = ({ isOpen, onClose }) => (
             <MobileNavLink href="#">Company</MobileNavLink>
           </div>
           <div className="py-6">
-            <MobileNavLink>Log in</MobileNavLink>
+            <MobileNavLink href="/login">Log in</MobileNavLink>
           </div>
         </div>
       </div>

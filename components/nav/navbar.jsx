@@ -7,8 +7,23 @@ import MenuLink from "./menu-link";
 import MobileMenu from "./mobile-menu";
 import MobileMenuButton from "./mobile-menu-button";
 
+import { auth } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
+
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const { isLoaded, userId: clientUserId, sessionId, getToken } = useAuth();
+
+  const { isLoaded: isUserLoaded, isSignedIn, user } = useUser();
+
+  console.log({ clientUserId });
+
+  // const { userId } = auth();
+  // console.log({ userId });
+
   return (
     <header className="bg-white">
       <nav
@@ -23,7 +38,11 @@ const Navbar = () => {
         </div>
         <DesktopMenu />
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <MenuLink href="/login">Log in &rarr;</MenuLink>
+          {isSignedIn ? (
+            <UserButton afterSignOutUrl="/" />
+          ) : (
+            <MenuLink href="/sign-in">Log in &rarr;</MenuLink>
+          )}
         </div>
       </nav>
       <MobileMenu

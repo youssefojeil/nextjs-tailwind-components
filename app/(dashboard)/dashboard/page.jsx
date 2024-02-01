@@ -1,6 +1,7 @@
-import React from 'react';
+import { addUser } from '@/lib/user';
 
-const DashboardPage = () => {
+const DashboardPage = async () => {
+  addUser();
   return <div>DashboardPage</div>;
 };
 

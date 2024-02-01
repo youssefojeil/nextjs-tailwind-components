@@ -5,12 +5,14 @@ import { XMarkIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 import { callsToAction, products } from '@/constants/nav-items';
 import MobileNavLink from './mobile-nav-link';
 import useMobileMenuStore from '@/hooks/useMobileMenuStore';
+import { UserButton, useAuth, useUser } from '@clerk/nextjs';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 const MobileMenu = () => {
+  const { isLoaded: isUserLoaded, isSignedIn, user } = useUser();
   const { isOpen, close } = useMobileMenuStore();
 
   return (
@@ -72,7 +74,11 @@ const MobileMenu = () => {
               <MobileNavLink href="#">Company</MobileNavLink>
             </div>
             <div className="py-6">
-              <MobileNavLink href="/login">Log in</MobileNavLink>
+              {isSignedIn ? (
+                <UserButton afterSignOutUrl="/" />
+              ) : (
+                <MobileNavLink href="/sign-in">Log in &rarr;</MobileNavLink>
+              )}
             </div>
           </div>
         </div>

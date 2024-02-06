@@ -5,8 +5,11 @@ import Header from '@/components/header/header';
 import Modal from '@/components/modal/modal';
 import { ModalProvider } from '@/components/modal/modal-provider';
 import Navbar from '@/components/nav/navbar';
+import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
+import { items } from '@/constants/movingCardItems';
 
 import { title, description, links, stats } from '@/constants/headerItems';
+import { ParallaxScrollDemo } from '@/components/content/parallax-scroll-demo';
 
 export default function Home() {
   return (
@@ -22,8 +25,8 @@ export default function Home() {
       <Brands />
       {/* <CallToActionWithBackgroundImage /> */}
 
-      <div>
-        <ModalProvider />
+      <div className=" flex flex-col antialiased items-center justify-center relative overflow-hidden">
+        <InfiniteMovingCards items={items} direction="right" speed="slow" />
       </div>
     </main>
   );

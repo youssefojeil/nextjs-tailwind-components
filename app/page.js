@@ -10,10 +10,13 @@ import { items } from '@/constants/movingCardItems';
 
 import { title, description, links, stats } from '@/constants/headerItems';
 import { ParallaxScrollDemo } from '@/components/content/parallax-scroll-demo';
+import { LampDemo } from '@/components/ui/lamp';
+import { LayoutGridDemo } from '@/components/content/layout-grid-demo';
 
 export default function Home() {
   return (
     <main>
+      <LampDemo />
       <Header
         title={title}
         description={description}
@@ -28,6 +31,8 @@ export default function Home() {
       <div className=" flex flex-col antialiased items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards items={items} direction="right" speed="slow" />
       </div>
+
+      <LayoutGridDemo />
     </main>
   );
 }

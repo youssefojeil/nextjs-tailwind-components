@@ -2,7 +2,10 @@
 const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
-    remotePatterns: [{ hostname: 'tailwindui.com' }],
+    remotePatterns: [
+      { hostname: 'tailwindui.com' },
+      { hostname: 'images.unsplash.com' },
+    ],
   },
 };
 

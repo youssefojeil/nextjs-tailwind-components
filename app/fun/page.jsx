@@ -4,7 +4,7 @@ import React from 'react';
 
 const FunPage = () => {
   return (
-    <div>
+    <div className="bg-gradient-to-br from-black to-slate-500">
       <LampDemo title="Will you hire me?" />
       <RandomButton />
     </div>
